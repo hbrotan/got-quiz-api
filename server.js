@@ -10,7 +10,7 @@ var sql = require( "seriate" );
 var config = {  
     "server": process.env.server,
 	"port": 1433,
-    "user": process.env.database_user,
+    "user": process.env.database_username,
     "password": process.env.database_password,
     "database": process.env.database,
     "pool": { "max": 5, "min": 1 },
