@@ -43,6 +43,10 @@ var port = process.env.PORT || 3000;        // set the port
 // ===================================================================================
 var router = express.Router();
 	
+router.get('/', function(req, res) {
+    res.json({ message: 'hooray! welcome to the api!' });   
+});	
+	
 router.route('/answers')	
 	.post(function(req, res){
         // Add answer			
