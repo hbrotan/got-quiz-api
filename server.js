@@ -50,7 +50,7 @@ router.route('/answers')
 		var ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 		
         sql.execute({  
-            query: 'INSERT INTO [dbo].[GotQuizNrk]([Name],[Email],[IpAddress],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Q7],[Q8],[Q9],[Q10],[Q11],[Q12],[Q13],[Q14],[Q15],[Q16],[Q17],[Q18],[Q19],[Q20],[Q21],[Q22],[Q23],[Q24],[Q25],[Q26],[Q27],[Q28],[Q29],[Q30],[When])      VALUES(@name,@email,@company,@ipAddress,@q1,@q2,@q3,@q4,@q5,@q6,@q7,@q8,@q9,@q10,@q11,@q12,@q13,@q14,@q15,@q16,@q17,@q18,@q19,@q20,@q21,@q22,@q23,@q24,@q25,@q26,@q27,@q28,@q29,@q30,GETDATE())',
+            query: 'INSERT INTO [dbo].[GotQuizNrk]([Name],[Email],[IpAddress],[Q1],[Q2],[Q3],[Q4],[Q5],[Q6],[Q7],[Q8],[Q9],[Q10],[Q11],[Q12],[Q13],[Q14],[Q15],[Q16],[Q17],[Q18],[Q19],[Q20],[Q21],[Q22],[Q23],[Q24],[Q25],[Q26],[Q27],[Q28],[Q29],[Q30],[When])      VALUES(@name,@email,@ipAddress,@q1,@q2,@q3,@q4,@q5,@q6,@q7,@q8,@q9,@q10,@q11,@q12,@q13,@q14,@q15,@q16,@q17,@q18,@q19,@q20,@q21,@q22,@q23,@q24,@q25,@q26,@q27,@q28,@q29,@q30,GETDATE())',
             params: {
                 name: {
                     type: sql.VARCHAR,
