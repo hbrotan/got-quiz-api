@@ -11,8 +11,8 @@ var sql = require( "seriate" );
 var config = {  
     "server": process.env.server,
 	"port": 1433,
-    "user": process.env.user,
-    "password": process.env.password,
+    "user": process.env.database_user,
+    "password": process.env.database_password,
     "database": process.env.database,
     "pool": { "max": 5, "min": 1 },
 	"options": { "encrypt": true }
@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.all('*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'OPTIONS,POST');
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+    res.header("Access-Control-Allow-Headers", "Origin, Content-Type, Authorization, X-Requested-With, X-Auth-Token");
     if ('OPTIONS' == req.method){
         return res.send(200);
     }
