@@ -43,7 +43,7 @@ var port = process.env.PORT || 3000;        // set the port
 var router = express.Router();
 	
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to the api!' });   
+    res.json({ message: req.headers['x-forwarded-for'] || req.connection.remoteAddress });   
 });	
 	
 router.route('/answers')	
