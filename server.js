@@ -46,6 +46,18 @@ router.get('/', function(req, res) {
     res.json({ message: req.headers['x-forwarded-for'] || req.connection.remoteAddress });   
 });	
 	
+router.route('/characters')	
+	.get(function(req, res){
+		sql.execute({  
+			query: 'SELECT * FROM dbo.GotQuizCharacters'
+		}).then( function( results ) {
+			res.send(results);
+		}).catch(function(error){
+			res.json(error);
+			throw error;
+		});	
+	})	
+	
 router.route('/answers')	
 	.get(function(req, res){
 		sql.execute({  
