@@ -80,7 +80,7 @@ router.route('/answers')
 					'CASE [Q27] WHEN 'L' THEN 2 ELSE 0 END + ' +
 					'CASE [Q28] WHEN 'L' THEN 2 ELSE 0 END + ' +
 					'CASE [Q29] WHEN 'L' THEN 2 ELSE 0 END + ' +
-					'CASE [Q30] WHEN 'L' THEN 2 ELSE 0 END) as Points'' +
+					'CASE [Q30] WHEN 'L' THEN 2 ELSE 0 END) as Points ' +
 				'FROM dbo.GotQuizNrk X ' + 
 				'WHERE X.Id = (SELECT MAX(Id) FROM dbo.GotQuizNrk WHERE Email = X.Email) ' + 
 				'ORDER BY Points DESC, [Name] ASC'
